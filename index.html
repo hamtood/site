@@ -94,7 +94,7 @@
       width: 100%;
       overflow: hidden;
       position: relative;
-      margin-top: 2rem;
+      margin-top: 0;
     }
 
     .slides {
@@ -133,6 +133,34 @@
 
     .next {
       right: 15px;
+    }
+
+    .articles {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .article {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .article h2 {
+      margin-top: 0;
+      color: #234567;
+      font-family: 'Ubuntu', sans-serif;
+    }
+
+    .article p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333333;
     }
   </style>
 </head>
@@ -194,6 +222,21 @@
     </div>
     <div class="prev">❮</div>
     <div class="next">❯</div>
+  </div>
+
+  <div class="articles">
+    <div class="article">
+      <h2>Dernières nouvelles de l'Ukraine</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et faucibus. Morbi non suscipit quam.</p>
+    </div>
+    <div class="article">
+      <h2>Initiatives locales de soutien</h2>
+      <p>Phasellus ultrices, est at fermentum egestas, arcu justo malesuada erat, nec ullamcorper libero sapien sit amet ligula.</p>
+    </div>
+    <div class="article">
+      <h2>Événements à venir</h2>
+      <p>Fusce suscipit, magna at feugiat vehicula, urna nunc vehicula massa, et feugiat metus turpis a nulla. Duis facilisis mi in libero luctus.</p>
+    </div>
   </div>
 
   <script>

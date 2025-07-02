@@ -91,13 +91,10 @@
     }
 
     .slider {
-      width: 90%;
-      max-width: 1200px;
-      margin: 2rem auto;
+      width: 100%;
       overflow: hidden;
       position: relative;
-      border-radius: 2rem;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      margin-top: 2rem;
     }
 
     .slides {
@@ -107,10 +104,9 @@
     }
 
     .slides img {
-      width: 100%;
+      width: 100vw;
       height: 80vh;
       object-fit: cover;
-      border-radius: 2rem;
     }
 
     .prev, .next {
@@ -206,7 +202,7 @@
     let index = 0;
 
     const updateSlider = () => {
-      slides.style.transform = `translateX(-${index * 100}%)`;
+      slides.style.transform = `translateX(-${index * 100}vw)`;
     };
 
     document.querySelector('.next').addEventListener('click', () => {

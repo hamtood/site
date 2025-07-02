@@ -17,31 +17,37 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      padding: 2rem 3rem;
       background-color: #0b2239;
+      height: 100px;
     }
 
     .logo {
-      height: 50px;
+      height: 60px;
     }
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     /* From Uiverse.io by TaniaDou */
     .button {
-      padding: 1rem 2rem;
+      padding: 1.2rem 2.2rem;
       border-radius: 0.5rem;
       border: none;
-      font-size: 1rem;
-      font-weight: 400;
+      font-size: 1.1rem;
+      font-weight: 500;
       color: #f4f0ff;
       text-align: center;
       position: relative;
       cursor: pointer;
       background: transparent;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
     }
 
     .button::before {
@@ -123,7 +129,7 @@
 
     .slides {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.7s ease-in-out;
       width: 500%;
     }
 
@@ -157,14 +163,12 @@
   </div>
 
   <script>
-    // простой авто-слайдер
     const slides = document.querySelector('.slides');
     let index = 0;
     setInterval(() => {
       index = (index + 1) % 4;
       slides.style.transform = `translateX(-${index * 100}vw)`;
-    }, 3000);
+    }, 5000); // медленнее — 5 секунд
   </script>
 </body>
 </html>
-

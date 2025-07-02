@@ -29,17 +29,15 @@
 
     nav {
       display: grid;
-      grid-template-columns: repeat(2, auto);
+      grid-template-columns: repeat(1, auto);
       grid-template-rows: repeat(3, auto);
-      gap: 1rem 2rem;
-      align-items: center;
+      gap: 1rem;
     }
 
-    /* From Uiverse.io by alexmaracinaru */
     .cta {
       position: relative;
       margin: auto;
-      padding: 8px 14px;
+      padding: 14px 24px;
       transition: all 0.2s ease;
       border: none;
       background: none;
@@ -54,15 +52,16 @@
       display: block;
       border-radius: 50px;
       background: #b1dae7;
-      width: 35px;
-      height: 35px;
+      width: 100%;
+      height: 100%;
       transition: all 0.3s ease;
+      z-index: -1;
     }
 
     .cta span {
       position: relative;
       font-family: 'Ubuntu', sans-serif;
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #234567;
@@ -117,48 +116,54 @@
   <header>
     <img src="472900477_122176437188125424_4907914911375063348_n-removebg-preview (1).png" alt="AFUT Logo" class="logo">
     <nav>
-      <button class="cta">
-        <span>Soutenir l'Ukraine</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Événements</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>À propos</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Support</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Nos partenaires</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Ressources</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
+      <div style="display: flex; gap: 1rem;">
+        <button class="cta">
+          <span>Soutenir l'Ukraine</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+        <button class="cta">
+          <span>Événements</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div style="display: flex; gap: 1rem;">
+        <button class="cta">
+          <span>À propos</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+        <button class="cta">
+          <span>Support</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div style="display: flex; gap: 1rem;">
+        <button class="cta">
+          <span>Nos partenaires</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+        <button class="cta">
+          <span>Ressources</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </button>
+      </div>
     </nav>
   </header>
 

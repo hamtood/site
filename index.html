@@ -16,11 +16,11 @@
 
     header {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       padding: 2rem 3rem;
       background-color: #ffffff;
-      height: auto;
+      height: 110px;
     }
 
     .logo {
@@ -28,17 +28,15 @@
     }
 
     nav {
-      display: grid;
-      grid-template-rows: repeat(3, auto);
-      grid-template-columns: repeat(2, auto);
-      gap: 1rem 2rem;
-      align-items: center;
+      display: flex;
+      gap: 1.5rem;
     }
 
+    /* From Uiverse.io by alexmaracinaru */
     .cta {
       position: relative;
       margin: auto;
-      padding: 14px 24px;
+      padding: 12px 18px;
       transition: all 0.2s ease;
       border: none;
       background: none;
@@ -53,16 +51,15 @@
       display: block;
       border-radius: 50px;
       background: #b1dae7;
-      width: 100%;
-      height: 100%;
+      width: 45px;
+      height: 45px;
       transition: all 0.3s ease;
-      z-index: -1;
     }
 
     .cta span {
       position: relative;
       font-family: 'Ubuntu', sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #234567;
@@ -161,7 +158,6 @@
       </button>
     </nav>
   </header>
-
   <div class="slider">
     <div class="slides">
       <img src="Flag_of_the_Ukrainian_Soviet_Socialist_Republic_(1949–1991).svg" alt="USSR Flag">
@@ -170,13 +166,12 @@
       <img src="Flag_of_Ukraine.svg.png" alt="Ukraine Flag">
     </div>
   </div>
-
   <script>
     const slides = document.querySelector('.slides');
     let index = 0;
     setInterval(() => {
       index = (index + 1) % 4;
-      slides.style.transform = `translateX(-${index * 100}vw)`;
+      slides.style.transform = translateX(-${index * 100}vw);
     }, 5000);
   </script>
 </body>

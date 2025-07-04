@@ -124,12 +124,13 @@
       margin: 4rem 0 2rem 0;
     }
 
-    .articles {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem;
-    }
+   .articles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0 2rem 2rem 2rem;
+  justify-content: center;
+}
 
     .article-row {
       display: flex;
@@ -145,10 +146,11 @@
       flex: 1;
     }
 
-    .article.half {
-      max-width: 500px;
-      flex: 1;
-    }
+   .article.half {
+  flex: 0 0 48%;
+  max-width: 48%;
+  box-sizing: border-box;
+}
 
     .article h2 {
       font-family: 'Ubuntu', sans-serif;

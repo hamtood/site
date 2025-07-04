@@ -7,7 +7,8 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
     body {
       margin: 0;
@@ -117,15 +118,15 @@
     }
 
     .section-title {
-      font-family: 'IBM Plex Serif', serif;
-      font-size: 8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 9rem;
       color: #0D1B1E;
       text-align: center;
       margin: 4rem 0 2rem 0;
     }
 
     .articles {
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: 2rem;
       padding: 2rem;
@@ -144,8 +145,9 @@
       background: #ffffff;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
+      padding: 2rem;
       box-sizing: border-box;
+      font-family: 'Comic Neue', cursive;
     }
 
     .article.half {
@@ -153,14 +155,13 @@
     }
 
     .article h2 {
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: #333;
       margin-bottom: 0.5rem;
     }
 
     .article p {
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: #555;
     }
 
@@ -170,6 +171,11 @@
       margin-top: 1rem;
       max-height: 300px;
       object-fit: cover;
+    }
+
+    .learn-more {
+      display: block;
+      margin: 2rem auto;
     }
   </style>
 </head>
@@ -185,34 +191,10 @@
           <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
       </a>
-      <a href="#" class="cta">
-        <span>À propos</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </a>
-      <a href="#" class="cta">
-        <span>Support</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </a>
-      <a href="#" class="cta">
-        <span>Nos partenaires</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </a>
-      <a href="#" class="cta">
-        <span>Ressources</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </a>
+      <a href="#" class="cta"><span>À propos</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#" class="cta"><span>Support</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#" class="cta"><span>Nos partenaires</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#" class="cta"><span>Ressources</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
     </nav>
   </header>
 
@@ -220,32 +202,36 @@
 
   <h1 class="section-title">ÉVÉNEMENTS</h1>
 
+  <button class="learn-more" onclick="document.querySelector('.articles').style.display = 'flex';">
+    <span aria-hidden="true" class="circle">
+      <span class="icon arrow"></span>
+    </span>
+    <span class="button-text">Learn More</span>
+  </button>
+
   <div class="articles">
     <div class="article-row">
       <div id="evenements" class="article section half">
         <h2>Événement 1</h2>
-        <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+        <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
         <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event">
       </div>
       <div class="article section half">
         <h2>Événement 2</h2>
-        <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+        <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
         <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Workshop">
       </div>
     </div>
-
     <div class="article section">
       <h2>Événement 3</h2>
       <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
       <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Concert">
     </div>
-
     <div class="article section">
       <h2>Événement 4</h2>
       <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
       <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Cuisine">
     </div>
-
     <div class="article section">
       <h2>Événement 5</h2>
       <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>

@@ -21,6 +21,10 @@
       padding: 1rem 2rem;
       background-color: #ffffff;
       height: 100px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
@@ -90,77 +94,37 @@
       transform: scale(0.95);
     }
 
-    .slider {
+    .hero-image {
       width: 100%;
-      overflow: hidden;
-      position: relative;
-      margin-top: 0;
-    }
-
-    .slides {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 400%;
-    }
-
-    .slides img {
-      width: 100vw;
       height: 80vh;
       object-fit: cover;
-    }
-
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.4);
-      color: white;
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 50%;
-      transition: background-color 0.3s;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    .prev {
-      left: 15px;
-    }
-
-    .next {
-      right: 15px;
+      display: block;
     }
 
     .articles {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      padding: 2rem;
     }
 
     .article {
-      background-color: #ffffff;
-      padding: 2rem;
+      background: #ffffff;
       border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
     }
 
     .article h2 {
-      margin-top: 0;
-      color: #234567;
       font-family: 'Ubuntu', sans-serif;
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
     }
 
     .article p {
       font-size: 1rem;
-      line-height: 1.6;
-      color: #333333;
+      color: #555;
     }
   </style>
 </head>
@@ -213,55 +177,22 @@
     </nav>
   </header>
 
-  <div class="slider">
-    <div class="slides">
-      <img src="Flag_of_the_Ukrainian_Soviet_Socialist_Republic_(1949–1991).svg" alt="USSR Flag">
-      <img src="Flag_of_Ukrainian_State.png" alt="Ukrainian State Flag">
-      <img src="146561.jpg" alt="Ukraine 146561">
-      <img src="Flag_of_Ukraine.svg.png" alt="Ukraine Flag">
-    </div>
-    <div class="prev">❮</div>
-    <div class="next">❯</div>
-  </div>
+  <img class="hero-image" src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Hero Image">
 
   <div class="articles">
     <div class="article">
-      <h2>Dernières nouvelles de l'Ukraine</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque aliquam odio et faucibus. Morbi non suscipit quam.</p>
+      <h2>Article 1: Importance de la solidarité</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec justo nec lorem dignissim fermentum.</p>
     </div>
     <div class="article">
-      <h2>Initiatives locales de soutien</h2>
-      <p>Phasellus ultrices, est at fermentum egestas, arcu justo malesuada erat, nec ullamcorper libero sapien sit amet ligula.</p>
+      <h2>Article 2: Soutenir l’Ukraine localement</h2>
+      <p>Quisque facilisis urna et risus fermentum, a cursus odio bibendum. Vivamus at velit sit amet turpis fermentum euismod.</p>
     </div>
     <div class="article">
-      <h2>Événements à venir</h2>
-      <p>Fusce suscipit, magna at feugiat vehicula, urna nunc vehicula massa, et feugiat metus turpis a nulla. Duis facilisis mi in libero luctus.</p>
+      <h2>Article 3: Nos partenariats</h2>
+      <p>Donec vel sapien at nisl congue porttitor. Cras sed nisi at arcu laoreet feugiat.</p>
     </div>
   </div>
-
-  <script>
-    const slides = document.querySelector('.slides');
-    const total = slides.children.length;
-    let index = 0;
-
-    const updateSlider = () => {
-      slides.style.transform = `translateX(-${index * 100}vw)`;
-    };
-
-    document.querySelector('.next').addEventListener('click', () => {
-      index = (index + 1) % total;
-      updateSlider();
-    });
-
-    document.querySelector('.prev').addEventListener('click', () => {
-      index = (index - 1 + total) % total;
-      updateSlider();
-    });
-
-    setInterval(() => {
-      index = (index + 1) % total;
-      updateSlider();
-    }, 5000);
-  </script>
 </body>
 </html>
+

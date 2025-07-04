@@ -18,9 +18,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      padding: 0.8rem 2rem;
       background-color: #ffffff;
-      height: 100px;
+      height: 90px;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -28,26 +28,26 @@
     }
 
     .logo {
-      height: 90px;
+      height: 70px;
     }
 
     .divider {
       flex: 1;
-      height: 1px;
-      background-color: #ccc;
-      margin: 0 2rem;
-      max-width: 200px;
+      height: 0.5px;
+      background-color: #bbb;
+      margin: 0 1.5rem;
+      max-width: 150px;
     }
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
     .cta {
       position: relative;
       margin: auto;
-      padding: 10px 14px;
+      padding: 8px 12px;
       transition: all 0.2s ease;
       border: none;
       background: none;
@@ -70,7 +70,7 @@
     .cta span {
       position: relative;
       font-family: 'Ubuntu', sans-serif;
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #234567;
@@ -107,11 +107,11 @@
       height: 80vh;
       object-fit: cover;
       display: block;
-      margin-top: 100px;
+      margin-top: 90px;
     }
 
     .section {
-      scroll-margin-top: 110px;
+      scroll-margin-top: 100px;
     }
 
     .articles {
@@ -138,6 +138,12 @@
     .article p {
       font-size: 1rem;
       color: #555;
+    }
+
+    .article img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -189,30 +195,33 @@
   <div class="articles">
     <div id="evenements" class="article section">
       <h2>Événements</h2>
-      <p>Nous organisons régulièrement des événements pour soutenir les initiatives franco-ukrainiennes. Venez participer à nos prochaines conférences, ateliers, et rencontres culturelles. Suivez nos annonces ici pour ne rien manquer.</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" style="width:100%; border-radius: 12px; margin-top: 1rem;">
+      <p>Nous organisons régulièrement des événements pour soutenir les initiatives franco-ukrainiennes. Venez participer à nos prochaines conférences, ateliers, et rencontres culturelles.</p>
+      <img src="Flag_of_Ukraine.svg.png" alt="Event">
     </div>
 
     <div id="apropos" class="article section">
       <h2>À propos</h2>
       <p>L'Association Franco-Ukrainienne de Tourves a été fondée pour renforcer les liens entre les communautés française et ukrainienne. Nous œuvrons pour la solidarité, la culture et l'entraide entre les peuples.</p>
+      <img src="Flag_of_Ukrainian_State.png" alt="About">
     </div>
 
     <div id="support" class="article section">
       <h2>Support</h2>
       <p>Votre soutien est essentiel. Découvrez les différentes manières de contribuer : dons, bénévolat, partenariats, ou en partageant simplement notre message.</p>
+      <img src="146561.jpg" alt="Support">
     </div>
 
     <div id="partenaires" class="article section">
       <h2>Nos partenaires</h2>
       <p>Nous collaborons avec diverses associations, entreprises et institutions engagées. Ensemble, nous portons des projets à fort impact social et culturel.</p>
+      <img src="Flag_of_the_Ukrainian_Soviet_Socialist_Republic_(1949–1991).svg" alt="Partners">
     </div>
 
     <div id="ressources" class="article section">
       <h2>Ressources</h2>
       <p>Consultez notre base de documents utiles : guides pratiques, textes de loi, fiches d'information, et liens vers des services d'aide.</p>
+      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Resources">
     </div>
   </div>
 </body>
 </html>
-

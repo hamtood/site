@@ -118,7 +118,7 @@
 
     .section-title {
       font-family: 'Quicksand', sans-serif;
-      font-size: 5rem;
+      font-size: 6rem;
       color: #0D1B1E;
       text-align: center;
       margin: 4rem 0 2rem 0;
@@ -131,15 +131,23 @@
       padding: 2rem;
     }
 
+    .article-row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
     .article {
       background: #ffffff;
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
+      flex: 1;
     }
 
     .article.half {
       max-width: 500px;
+      flex: 1;
     }
 
     .article h2 {
@@ -211,10 +219,17 @@
   <h1 class="section-title">ÉVÉNEMENTS</h1>
 
   <div class="articles">
-    <div id="evenements" class="article section half">
-      <h2>Événement spécial</h2>
-      <p>Un événement symbolique célébrant la coopération entre les peuples.</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event">
+    <div class="article-row">
+      <div id="evenements" class="article section half">
+        <h2>Événement spécial</h2>
+        <p>Un événement symbolique célébrant la coopération entre les peuples.</p>
+        <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event">
+      </div>
+      <div class="article section half">
+        <h2>Atelier participatif</h2>
+        <p>Rejoignez-nous pour une session d’échange et de création collective.</p>
+        <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Workshop">
+      </div>
     </div>
 
     <div class="article section">

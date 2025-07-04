@@ -118,23 +118,25 @@
 
     .section-title {
       font-family: 'Quicksand', sans-serif;
-      font-size: 6rem;
+      font-size: 7rem;
       color: #0D1B1E;
       text-align: center;
       margin: 4rem 0 2rem 0;
     }
 
-   .articles {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  padding: 0 2rem 2rem 2rem;
-  justify-content: center;
-}
+    .articles {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
     .article-row {
       display: flex;
       gap: 2rem;
+      justify-content: space-between;
       flex-wrap: wrap;
     }
 
@@ -143,14 +145,12 @@
       border-radius: 1rem;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 1.5rem;
-      flex: 1;
+      box-sizing: border-box;
     }
 
-   .article.half {
-  flex: 0 0 48%;
-  max-width: 48%;
-  box-sizing: border-box;
-}
+    .article.half {
+      width: calc(50% - 1rem);
+    }
 
     .article h2 {
       font-family: 'Ubuntu', sans-serif;
@@ -260,3 +260,4 @@
   </div>
 </body>
 </html>
+

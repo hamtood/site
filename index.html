@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -7,252 +6,206 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@700&display=swap');
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #f0f0f0;
+}
 
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: #F5F3F5;
-    }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  height: 100px;
+}
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      background-color: #ffffff;
-      height: 100px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
+.logo {
+  height: 90px;
+}
 
-    .logo {
-      height: 90px;
-    }
+nav {
+  display: flex;
+  gap: 1rem;
+}
 
-    .divider {
-      flex: 1;
-      height: 1px;
-      background-color: #ccc;
-      margin: 0 2rem;
-      max-width: 200px;
-    }
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 10px 14px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
 
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
 
-    .cta {
-      position: relative;
-      margin: auto;
-      padding: 10px 14px;
-      transition: all 0.2s ease;
-      border: none;
-      background: none;
-      cursor: pointer;
-      text-decoration: none;
-    }
+.cta span {
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
 
-    .cta:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      display: block;
-      border-radius: 50px;
-      background: #b1dae7;
-      width: 45px;
-      height: 45px;
-      transition: all 0.3s ease;
-    }
+.cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
 
-    .cta span {
-      position: relative;
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      color: #234567;
-    }
+.cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+}
 
-    .cta svg {
-      position: relative;
-      top: 0;
-      margin-left: 10px;
-      fill: none;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke: #234567;
-      stroke-width: 2;
-      transform: translateX(-5px);
-      transition: all 0.3s ease;
-    }
+.cta:hover svg {
+  transform: translateX(0);
+}
 
-    .cta:hover:before {
-      width: 100%;
-      background: #b1dae7;
-    }
+.cta:active {
+  transform: scale(0.95);
+}
 
-    .cta:hover svg {
-      transform: translateX(0);
-    }
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
 
-    .cta:active {
-      transform: scale(0.95);
-    }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 400%;
+}
 
-    .hero-image {
-      width: 100%;
-      height: 80vh;
-      object-fit: cover;
-      display: block;
-      margin-top: 0;
-    }
+.slides img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
 
-    .section {
-      scroll-margin-top: 100px;
-    }
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 10;
+}
 
-    .section-title {
-      font-family: 'IBM Plex Serif', serif;
-      font-size: 8rem;
-      color: #0D1B1E;
-      text-align: center;
-      margin: 4rem 0 2rem 0;
-    }
-
-    .articles {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .article-row {
-      display: flex;
-      gap: 2rem;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    .article {
-      background: #ffffff;
-      border-radius: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 1.5rem;
-      box-sizing: border-box;
-    }
-
-    .article.half {
-      width: calc(50% - 1rem);
-    }
-
-    .article h2 {
-      font-family: 'Ubuntu', sans-serif;
-      font-size: 1.5rem;
-      color: #333;
-      margin-bottom: 0.5rem;
-    }
-
-    .article p {
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .article img {
-      width: 100%;
-      border-radius: 1rem;
-      margin-top: 1rem;
-      max-height: 300px;
-      object-fit: cover;
-    }
+.prev {
+  left: 10px;
+} .next {
+  right: 10px;
+}
   </style>
 </head>
 <body>
   <header>
     <img src="472900477_122176437188125424_4907914911375063348_n-removebg-preview (1).png" alt="AFUT Logo" class="logo">
-    <div class="divider"></div>
     <nav>
-      <a href="#evenements" class="cta">
+      <button class="cta">
+        <span>Soutenir l'Ukraine</span>
+        <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta">
         <span>Événements</span>
         <svg width="15px" height="10px" viewBox="0 0 13 10">
           <path d="M1,5 L11,5"></path>
           <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
-      </a>
-      <a href="#" class="cta">
+      </button>
+      <button class="cta">
         <span>À propos</span>
         <svg width="15px" height="10px" viewBox="0 0 13 10">
           <path d="M1,5 L11,5"></path>
           <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
-      </a>
-      <a href="#" class="cta">
+      </button>
+      <button class="cta">
         <span>Support</span>
         <svg width="15px" height="10px" viewBox="0 0 13 10">
           <path d="M1,5 L11,5"></path>
           <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
-      </a>
-      <a href="#" class="cta">
+      </button>
+      <button class="cta">
         <span>Nos partenaires</span>
         <svg width="15px" height="10px" viewBox="0 0 13 10">
           <path d="M1,5 L11,5"></path>
           <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
-      </a>
-      <a href="#" class="cta">
+      </button>
+      <button class="cta">
         <span>Ressources</span>
         <svg width="15px" height="10px" viewBox="0 0 13 10">
           <path d="M1,5 L11,5"></path>
           <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
-      </a>
+      </button>
     </nav>
   </header>
-
-  <img class="hero-image" src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Hero Image">
-
-  <h1 class="section-title">ÉVÉNEMENTS</h1>
-
-  <div class="articles">
-    <div class="article-row">
-      <div id="evenements" class="article section half">
-        <h2>Événement 1</h2>
-        <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-        <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event">
-      </div>
-      <div class="article section half">
-        <h2>Événement 2</h2>
-        <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-        <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Workshop">
-      </div>
+  <div class="slider">
+    <div class="slides">
+      <img src="Flag_of_the_Ukrainian_Soviet_Socialist_Republic_(1949–1991).svg" alt="USSR Flag">
+      <img src="Flag_of_Ukrainian_State.png" alt="Ukrainian State Flag">
+      <img src="146561.jpg" alt="Ukraine 146561">
+      <img src="Flag_of_Ukraine.svg.png" alt="Ukraine Flag">
     </div>
-
-    <div class="article section">
-      <h2>Événement 3</h2>
-      <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Concert">
-    </div>
-
-    <div class="article section">
-      <h2>Événement 4</h2>
-      <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Cuisine">
-    </div>
-
-    <div class="article section">
-      <h2>Événement 5</h2>
-      <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Art">
-    </div>
+    <div class="prev">❮</div>
+    <div class="next">❯</div>
   </div>
+  <script>
+    const slides = document.querySelector('.slides');
+    const total = slides.children.length;
+    let index = 0;
+
+    const updateSlider = () => {
+      slides.style.transform = translateX(-${index * 100}vw);
+    };
+
+    document.querySelector('.next').addEventListener('click', () => {
+      index = (index + 1) % total;
+      updateSlider();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      index = (index - 1 + total) % total;
+      updateSlider();
+    });
+
+    setInterval(() => {
+      index = (index + 1) % total;
+      updateSlider();
+    }, 5000);
+  </script>
 </body>
 </html>
-
-

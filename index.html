@@ -1,47 +1,60 @@
-Вы сказали:
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AFUT - Nouveau Site</title>
-  <style> вот текущий код, твоя задача сделать что б слайдер листался, картинки, и стрелочку что бы пользователь мог сам его листать, плюс строки меню сверху сделай поуже 
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
-      background-color: #f0f0f0;
+      background-color: #F5F3F5;
     }
 
     header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 2rem 3rem;
+      padding: 1rem 2rem;
       background-color: #ffffff;
-      height: 110px;
+      height: 100px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
     .logo {
       height: 90px;
     }
 
-    nav {
-      display: flex;
-      gap: 1.5rem;
+    .divider {
+      flex: 1;
+      height: 1px;
+      background-color: #ccc;
+      margin: 0 2rem;
+      max-width: 200px;
     }
 
-    /* From Uiverse.io by alexmaracinaru */
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
     .cta {
       position: relative;
       margin: auto;
-      padding: 12px 18px;
+      padding: 10px 14px;
       transition: all 0.2s ease;
       border: none;
       background: none;
       cursor: pointer;
+      text-decoration: none;
     }
 
     .cta:before {
@@ -60,7 +73,7 @@
     .cta span {
       position: relative;
       font-family: 'Ubuntu', sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #234567;
@@ -92,21 +105,48 @@
       transform: scale(0.95);
     }
 
-    .slider {
+    .hero-image {
       width: 100%;
-      overflow: hidden;
-      position: relative;
+      height: 80vh;
+      object-fit: cover;
+      display: block;
+      margin-top: 0;
     }
 
-    .slides {
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 12rem;
+      color: #0D1B1E;
+      text-align: center;
+      margin: 4rem 0 2rem 0;
+    }
+
+    .article-row {
       display: flex;
-      transition: transform 0.7s ease-in-out;
-      width: 500%;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
     }
 
-    .slides img {
-      width: 100vw;
-      height: 100vh;
+    .article {
+      background: #ffffff;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      font-family: 'Comic Neue', cursive;
+      width: 45%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .article img {
+      width: 100%;
+      border-radius: 1rem;
+      margin-top: 1rem;
+      max-height: 300px;
       object-fit: cover;
     }
   </style>
@@ -114,66 +154,36 @@
 <body>
   <header>
     <img src="472900477_122176437188125424_4907914911375063348_n-removebg-preview (1).png" alt="AFUT Logo" class="logo">
+    <div class="divider"></div>
     <nav>
-      <button class="cta">
-        <span>Soutenir l'Ukraine</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Événements</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>À propos</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Support</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Nos partenaires</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="cta">
-        <span>Ressources</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
+      <a href="#evenements" class="cta"><span>Événements</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#" class="cta"><span>À propos</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#" class="cta"><span>Support</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#" class="cta"><span>Nos partenaires</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#" class="cta"><span>Ressources</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
     </nav>
   </header>
-  <div class="slider">
-    <div class="slides">
-      <img src="Flag_of_the_Ukrainian_Soviet_Socialist_Republic_(1949–1991).svg" alt="USSR Flag">
-      <img src="Flag_of_Ukrainian_State.png" alt="Ukrainian State Flag">
-      <img src="146561.jpg" alt="Ukraine 146561">
-      <img src="Flag_of_Ukraine.svg.png" alt="Ukraine Flag">
+
+  <img class="hero-image" src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Hero Image">
+
+  <h1 class="section-title">ÉVÉNEMENTS</h1>
+
+  <div class="article-row" id="evenements">
+    <div class="article">
+      <h2>Événement 1</h2>
+      <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event">
+    </div>
+    <div class="article">
+      <h2>Événement 2</h2>
+      <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event">
+    </div>
+    <div class="article">
+      <h2>Événement 3</h2>
+      <p>iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</p>
+      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event">
     </div>
   </div>
-  <script>
-    const slides = document.querySelector('.slides');
-    let index = 0;
-    setInterval(() => {
-      index = (index + 1) % 4;
-      slides.style.transform = translateX(-${index * 100}vw);
-    }, 5000);
-  </script>
 </body>
 </html>

@@ -1,10 +1,11 @@
+Вы сказали:
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AFUT - Nouveau Site</title>
-  <style>
+  <style> вот текущий код, твоя задача сделать что б слайдер листался, картинки, и стрелочку что бы пользователь мог сам его листать, плюс строки меню сверху сделай поуже 
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
 
@@ -18,9 +19,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2rem;
+      padding: 2rem 3rem;
       background-color: #ffffff;
-      height: 100px;
+      height: 110px;
     }
 
     .logo {
@@ -29,13 +30,14 @@
 
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
+    /* From Uiverse.io by alexmaracinaru */
     .cta {
       position: relative;
       margin: auto;
-      padding: 10px 14px;
+      padding: 12px 18px;
       transition: all 0.2s ease;
       border: none;
       background: none;
@@ -58,7 +60,7 @@
     .cta span {
       position: relative;
       font-family: 'Ubuntu', sans-serif;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       letter-spacing: 0.05em;
       color: #234567;
@@ -98,32 +100,14 @@
 
     .slides {
       display: flex;
-      transition: transform 0.5s ease-in-out;
-      width: 400%;
+      transition: transform 0.7s ease-in-out;
+      width: 500%;
     }
 
     .slides img {
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-    }
-
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    .prev {
-      left: 10px;
-    }.next {
-      right: 10px;
     }
   </style>
 </head>
@@ -175,7 +159,6 @@
       </button>
     </nav>
   </header>
-
   <div class="slider">
     <div class="slides">
       <img src="Flag_of_the_Ukrainian_Soviet_Socialist_Republic_(1949–1991).svg" alt="USSR Flag">
@@ -183,32 +166,13 @@
       <img src="146561.jpg" alt="Ukraine 146561">
       <img src="Flag_of_Ukraine.svg.png" alt="Ukraine Flag">
     </div>
-    <div class="prev">❮</div>
-    <div class="next">❯</div>
   </div>
-
   <script>
     const slides = document.querySelector('.slides');
-    const total = slides.children.length;
     let index = 0;
-
-    const updateSlider = () => {
-      slides.style.transform = translateX(-${index * 100}vw);
-    };
-
-    document.querySelector('.next').addEventListener('click', () => {
-      index = (index + 1) % total;
-      updateSlider();
-    });
-
-    document.querySelector('.prev').addEventListener('click', () => {
-      index = (index - 1 + total) % total;
-      updateSlider();
-    });
-
     setInterval(() => {
-      index = (index + 1) % total;
-      updateSlider();
+      index = (index + 1) % 4;
+      slides.style.transform = translateX(-${index * 100}vw);
     }, 5000);
   </script>
 </body>

@@ -10,6 +10,10 @@
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
@@ -110,15 +114,26 @@
       height: 80vh;
       object-fit: cover;
       display: block;
-      margin-top: 0;
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    .section-light {
+      background-color: #F5F3F5;
+    }
+
+    .section-dark {
+      background-color: #e7edf3;
     }
 
     .section-title {
       font-family: 'Cinzel', serif;
-      font-size: 12rem;
+      font-size: 5rem;
       color: #0D1B1E;
       text-align: center;
-      margin: 4rem 0 2rem 0;
+      margin-bottom: 3rem;
     }
 
     .article-row {
@@ -128,7 +143,6 @@
       justify-content: center;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem;
     }
 
     .article {
@@ -139,10 +153,17 @@
       font-family: 'Comic Neue', cursive;
       box-sizing: border-box;
       overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
     .half-width {
       width: 45%;
+      min-width: 280px;
     }
 
     .full-width {
@@ -156,46 +177,110 @@
       max-height: 300px;
       object-fit: cover;
     }
+
+    @media (max-width: 768px) {
+      .half-width, .full-width {
+        width: 100%;
+      }
+      .section-title {
+        font-size: 3rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <img src="472900477_122176437188125424_4907914911375063348_n-removebg-preview (1).png" alt="AFUT Logo" class="logo">
+    <img src="logo.png" alt="AFUT Logo" class="logo">
     <div class="divider"></div>
     <nav>
-      <a href="#evenements" class="cta"><span>Événements</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
-      <a href="#" class="cta"><span>À propos</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
-      <a href="#" class="cta"><span>Support</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
-      <a href="#" class="cta"><span>Nos partenaires</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
-      <a href="#" class="cta"><span>Ressources</span><svg width="15px" height="10px" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#evenements" class="cta"><span>Événements</span><svg width="15" height="10" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#apropos" class="cta"><span>À propos</span><svg width="15" height="10" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#support" class="cta"><span>Support</span><svg width="15" height="10" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#partenaires" class="cta"><span>Nos partenaires</span><svg width="15" height="10" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
+      <a href="#ressources" class="cta"><span>Ressources</span><svg width="15" height="10" viewBox="0 0 13 10"><path d="M1,5 L11,5"></path><polyline points="8 1 12 5 8 9"></polyline></svg></a>
     </nav>
   </header>
 
-  <img class="hero-image" src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Hero Image">
+  <img class="hero-image" src="hero.jpg" alt="Hero Image">
 
-  <h1 class="section-title">ÉVÉNEMENTS</h1>
+  <!-- ÉVÉNEMENTS -->
+  <section id="evenements" class="section-light">
+    <h1 class="section-title">ÉVÉNEMENTS</h1>
+    <div class="article-row">
+      <div class="article half-width">
+        <h2>Événement 1</h2>
+        <p>Texte événement 1</p>
+        <img src="event1.jpg" alt="Event 1">
+      </div>
+      <div class="article half-width">
+        <h2>Événement 2</h2>
+        <p>Texte événement 2</p>
+        <img src="event2.jpg" alt="Event 2">
+      </div>
+      <div class="article full-width">
+        <h2>Événement A</h2>
+        <p>Texte événement A</p>
+        <img src="eventA.jpg" alt="Event A">
+      </div>
+    </div>
+  </section>
 
-  <div class="article-row" id="evenements">
-    <div class="article half-width">
-      <h2>Événement 1</h2>
-      <p>текст мероприятия 1</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event 1">
+  <!-- À PROPOS -->
+  <section id="apropos" class="section-dark">
+    <h1 class="section-title">À PROPOS</h1>
+    <div class="article-row">
+      <div class="article full-width">
+        <h2>Titre</h2>
+        <p>Texte de présentation</p>
+        <img src="apropos.jpg" alt="À propos">
+      </div>
     </div>
-    <div class="article half-width">
-      <h2>Événement 2</h2>
-      <p>текст мероприятия 2</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event 2">
+  </section>
+
+  <!-- SUPPORT -->
+  <section id="support" class="section-light">
+    <h1 class="section-title">SUPPORT</h1>
+    <div class="article-row">
+      <div class="article half-width">
+        <h2>Support 1</h2>
+        <p>Description</p>
+        <img src="support1.jpg" alt="Support 1">
+      </div>
+      <div class="article half-width">
+        <h2>Support 2</h2>
+        <p>Description</p>
+        <img src="support2.jpg" alt="Support 2">
+      </div>
     </div>
-    <div class="article full-width">
-      <h2>Événement A</h2>
-      <p>текст нового мероприятия A</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event A">
+  </section>
+
+  <!-- PARTENAIRES -->
+  <section id="partenaires" class="section-dark">
+    <h1 class="section-title">NOS PARTENAIRES</h1>
+    <div class="article-row">
+      <div class="article half-width">
+        <h2>Partenaire 1</h2>
+        <p>Description</p>
+        <img src="partner1.jpg" alt="Partner 1">
+      </div>
+      <div class="article half-width">
+        <h2>Partenaire 2</h2>
+        <p>Description</p>
+        <img src="partner2.jpg" alt="Partner 2">
+      </div>
     </div>
-    <div class="article full-width">
-      <h2>Événement B</h2>
-      <p>текст нового мероприятия B</p>
-      <img src="upload-20220606_gaf_u39_505-pic4_zoom-1500x1500-94523.jpg" alt="Event B">
+  </section>
+
+  <!-- RESSOURCES -->
+  <section id="ressources" class="section-light">
+    <h1 class="section-title">RESSOURCES</h1>
+    <div class="article-row">
+      <div class="article full-width">
+        <h2>Ressource 1</h2>
+        <p>Description</p>
+        <img src="resource1.jpg" alt="Resource 1">
+      </div>
     </div>
-  </div>
+  </section>
 </body>
 </html>
